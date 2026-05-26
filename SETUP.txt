@@ -1,0 +1,58 @@
+==========================================================
+  LAX MULTI-LEAGUE PRICER - SETUP & DEPLOY
+==========================================================
+
+-------- ONE-TIME SETUP (do this once) --------
+
+1. Put ALL these files in ONE folder, e.g. C:\Users\chris\lax-pricer\
+   Keep the structure EXACTLY like this:
+
+     lax-pricer\
+       index.html
+       vercel.json
+       deploy.bat
+       api\
+         pll.js
+
+   *** The api folder MUST stay a subfolder. That's what makes the
+       live PLL feed work. ***
+
+2. Open Command Prompt in that folder:
+   - Open the folder in File Explorer
+   - Click the address bar, type:  cmd   and hit Enter
+   - (A black command window opens already in the right folder)
+
+3. First time only, link the project. Type:
+
+     vercel
+
+   It will ask a few questions. Answer:
+     - Set up and deploy? ......... Y
+     - Which scope? ............... (pick your account, hit Enter)
+     - Link to existing project? .. Y  (if you want to reuse ncaa-lax-pricer)
+                                    N  (to make a fresh one)
+     - Project name? .............. lax-pricer   (or whatever)
+     - Directory? ................. ./  (just hit Enter)
+     - Override settings? ......... N
+
+   When it finishes it prints a URL. That's your live site.
+
+
+-------- EVERY TIME AFTER (the easy part) --------
+
+When I send you a new index.html (or any updated file):
+
+1. Save the new file into the folder, replacing the old one.
+2. Double-click  deploy.bat
+3. Wait ~20 seconds. Your live URL updates. Done.
+
+That's it. No commands to remember.
+
+
+-------- IF deploy.bat DOESN'T WORK --------
+
+Open cmd in the folder (step 2 above) and type:
+
+     vercel --prod
+
+Same result, just typed manually.
